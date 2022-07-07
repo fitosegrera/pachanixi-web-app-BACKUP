@@ -1,8 +1,6 @@
 <script>
-	//LIBS
-
 	//COMPONENTS
-	import SideBar from '../navigation/sidebar.svelte';
+	import SideBar from './sidebar.svelte';
 	import SocialButton from '../button/dark/lg/social.svelte';
 	import HamburgerButton from '../button/dark/lg/hamburger.svelte';
 	import LogoButton from '../button/dark/lg/logo.svelte';
@@ -10,6 +8,16 @@
 	//PROPS
 	export let navBarData;
 	//console.log(navBarData);
+
+	let showSideBar = false;
+
+	const openMenu = () => {
+		showSideBar = true;
+	};
+
+	const closeMenu = () => {
+		showSideBar = false;
+	};
 </script>
 
 <div
@@ -26,9 +34,11 @@
 		{/each}
 	</div>
 	<div class="flex items-center h-full w-auto justify-end pr-32">
-		<div class="hover:text-primary-main cursor-pointer">
+		<div class="hover:text-primary-main cursor-pointer" on:click={openMenu}>
 			<HamburgerButton />
 		</div>
 	</div>
-	<SideBar menu={navBarData.menu} social={navBarData.social} />
+	{#if showSideBar}
+		<SideBar on:closeSideBar={closeMenu} menu={navBarData.menu} social={navBarData.social} />
+	{/if}
 </div>

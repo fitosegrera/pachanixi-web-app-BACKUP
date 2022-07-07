@@ -1,4 +1,8 @@
 <script>
+	//LIBS
+	import { createEventDispatcher } from 'svelte';
+	import { fly } from 'svelte/transition';
+
 	//COMPONENTS
 	import MenuItem from './menu-item.svelte';
 	import SocialButton from '../button/dark/lg/social.svelte';
@@ -7,10 +11,16 @@
 	//PROPS
 	export let menu, social;
 	// console.log(social);
+
+	const dispatch = createEventDispatcher();
+
+	const handleClick = () => {
+		dispatch('closeSideBar');
+	};
 </script>
 
-<div class="sidebar bg-primary-dark">
-	<div class="flex h-full w-full justify-end ">
+<div class="sidebar bg-primary-dark" transition:fly={{ x: 900, opacity: 0.1 }}>
+	<div class="flex h-full w-full justify-end" on:click={handleClick}>
 		<CloseButton icon={'ant-design:close-square-outlined'} />
 	</div>
 	{#each menu as item}
