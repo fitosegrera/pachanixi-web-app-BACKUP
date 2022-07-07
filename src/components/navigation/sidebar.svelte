@@ -1,0 +1,34 @@
+<script>
+	//COMPONENTS
+	import MenuItem from './menu-item.svelte';
+	import SocialButton from '../button/dark/lg/social.svelte';
+	import CloseButton from '../button/dark/lg/close.svelte';
+
+	//PROPS
+	export let menu, social;
+	// console.log(social);
+</script>
+
+<div class="sidebar bg-primary-dark">
+	<div class="flex h-full w-full justify-end ">
+		<CloseButton icon={'ant-design:close-square-outlined'} />
+	</div>
+	{#each menu as item}
+		<MenuItem label={item.item} url={item.url.url} />
+	{/each}
+	<div class="flex items-center justify-center h-full w-auto space-x-72">
+		{#each social as item}
+			<div class="hover:text-primary-light cursor-pointer">
+				<SocialButton icon={item.icon} name={item.name} active={item.active} url={item.url.url} />
+			</div>
+		{/each}
+	</div>
+</div>
+
+<style>
+	.sidebar {
+		position: fixed;
+		width: 100%;
+		min-height: 100vh;
+	}
+</style>
