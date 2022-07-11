@@ -21,7 +21,8 @@
 </script>
 
 <div
-	class="fixed grid grid-flow-col grid-cols-3 w-full h-160 py-16 bg-primary-dark-alpha text-2xl text-primary-light backdrop-blur-md"
+	id="navbar-wrapper"
+	class="fixed grid grid-flow-col grid-cols-3 w-1920 max-w-full h-160 py-16 bg-primary-dark-alpha text-2xl text-primary-light backdrop-blur-md"
 >
 	<div class="flex items-center h-110 w-100 justify-start pl-32">
 		<div class="cursor-pointer">
@@ -42,3 +43,9 @@
 		<SideBar on:closeSideBar={closeMenu} menu={navBarData.menu} social={navBarData.social} />
 	{/if}
 </div>
+
+<style>
+	#navbar-wrapper {
+		z-index: 2;
+	}
+</style>
