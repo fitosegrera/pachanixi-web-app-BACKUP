@@ -6,14 +6,26 @@
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
 	import NftCard from '../../components/card/dark/lg/nft.svelte';
 	import Scroller from '../../components/information/scroller.svelte';
+	import Separator from '../../components/iteractive/separator.svelte';
 
 	//PROPS
 	export let data;
 </script>
 
-<div class="w-auto h-auto bg-primary-dark pt-32 text-center">
+<div class="w-auto h-auto bg-primary-dark text-center">
 	<Main>
 		<div class="text-h5 text-primary-main font-bold">
+			<div class="flex w-auto justify-center pt-32">
+				<Separator
+					w={1480}
+					h={16}
+					foreground={'#BDFF00'}
+					background={'#02232B'}
+					cols={260}
+					rows={20}
+					threshold={0.96}
+				/>
+			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div class="flex justify-center mt-88">

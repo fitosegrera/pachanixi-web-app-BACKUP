@@ -4,6 +4,8 @@
 
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/light/lg/primary.svelte';
+	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
+	import Separator from '../../components/iteractive/separator.svelte';
 
 	//PROPS
 	export let data;
@@ -13,6 +15,17 @@
 	<Main>
 		<div class="flex">
 			<div>
+				<div class="flex w-full justify-start">
+					<Separator
+						w={600}
+						h={16}
+						foreground={'#02232B'}
+						background={'#BDFF00'}
+						cols={120}
+						rows={20}
+						threshold={0.96}
+					/>
+				</div>
 				<div class="flex space-x-32 text-h5 text-primary-dark font-bold items-center">
 					<h5>{data.primary.title[0].text}</h5>
 					<p class="text-p2 font-bold">{data.primary.subtitle_1[0].text}</p>
@@ -22,10 +35,14 @@
 					<h1 class="">{data.primary.subtitle_2[1].text}</h1>
 				</div>
 			</div>
-			<div id="video-wrapper" class="w-auto h-auto">
-				<video width="2400" height="100%" loop autoplay muted>
-					<source src="/assets/vids/nft-2-alpha.webm" type="video/webm" />
-				</video>
+			<div id="nft-wrapper" class="w-auto h-auto">
+				<ImageSequence
+					totalFrames={300}
+					name={'section-2-nft'}
+					url={'/assets/vids/nft-2-seq/'}
+					imgWidth={1330}
+					imgHeight={880}
+				/>
 			</div>
 		</div>
 		<div class="w-full h-auto pt-32 text-p2 font-medium">
@@ -34,42 +51,50 @@
 		<div class="flex w-auto justify-center mt-72">
 			<PrimaryButton label={data.primary.button_label} url={''} />
 		</div>
-		<div id="orbitante-left-wrapper" class="flex w-auto h-auto">
-			<video width="860" height="100%" loop autoplay muted>
-				<source src="/assets/vids/orbitante-2-alpha.webm" type="video/webm" />
-			</video>
+		<div id="orb-left-wrapper" class="w-auto h-auto">
+			<ImageSequence
+				totalFrames={300}
+				name={'section-2-orb-left'}
+				url={'/assets/vids/orbitante-2-seq/'}
+				imgWidth={240}
+				imgHeight={240}
+			/>
 		</div>
-		<div id="orbitante-right-wrapper" class="flex w-auto h-auto">
-			<video width="860" height="100%" loop autoplay muted>
-				<source src="/assets/vids/orbitante-3-alpha.webm" type="video/webm" />
-			</video>
+		<div id="orb-right-wrapper" class="w-auto h-auto">
+			<ImageSequence
+				totalFrames={300}
+				name={'section-2-orb-right'}
+				url={'/assets/vids/orbitante-3-seq/'}
+				imgWidth={180}
+				imgHeight={180}
+			/>
 		</div>
 	</Main>
 </div>
 
 <style>
-	#video-wrapper {
+	#nft-wrapper {
 		position: absolute;
-		right: -500px;
-		top: -400px;
+		right: -250px;
+		top: -250px;
 		pointer-events: none;
 		mix-blend-mode: normal;
 		z-index: 3;
 	}
 
-	#orbitante-left-wrapper {
+	#orb-right-wrapper {
 		position: absolute;
-		left: -200px;
-		top: 650px;
+		right: 200px;
+		top: 750px;
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 3;
 	}
 
-	#orbitante-right-wrapper {
+	#orb-left-wrapper {
 		position: absolute;
-		right: -10px;
-		top: 650px;
+		left: 200px;
+		top: 750px;
 		rotate: 60deg;
 		pointer-events: none;
 		z-index: 3;

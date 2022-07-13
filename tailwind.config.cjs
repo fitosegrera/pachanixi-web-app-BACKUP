@@ -81,7 +81,7 @@ module.exports = {
 			h5: [
 				'84px',
 				{
-					lineHeight: '96px'
+					lineHeight: '72px'
 				}
 			],
 			h6: [

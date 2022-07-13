@@ -1,9 +1,10 @@
 <script>
-	//containers
+	//CONTAINERS
 	import Main from '../../containers/main.svelte';
 
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
+	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
 
 	//PORPS
 	export let data;
@@ -27,25 +28,32 @@
 			<div class="flex w-auto justify-center mt-88">
 				<PrimaryButton label={data.primary.button_label} url={''} />
 			</div>
-			<div class="flex w-full h-full justify-center">
-				<video width="1600" height="100%" loop autoplay muted>
-					<source src="/assets/vids/nft-1-alpha.webm" type="video/webm" />
-				</video>
+			<div class="flex w-auto h-auto justify-center mt-64">
+				<ImageSequence
+					totalFrames={300}
+					name={'hero-nft'}
+					url={'/assets/vids/nft-1-seq/'}
+					imgWidth={1330}
+					imgHeight={880}
+				/>
 			</div>
-			<div id="orbitante-right-wrapper" class="w-auto h-auto">
-				<video width="860" height="100%" loop autoplay muted>
-					<source src="/assets/vids/orbitante-2-alpha.webm" type="video/webm" />
-				</video>
+			<div id="orb-right-wrapper" class="w-auto h-auto">
+				<ImageSequence
+					totalFrames={300}
+					name={'hero-orb-right'}
+					url={'/assets/vids/orbitante-2-seq/'}
+					imgWidth={240}
+					imgHeight={240}
+				/>
 			</div>
-			<div id="orbitante-left-wrapper" class="w-auto h-auto">
-				<video width="480" height="100%" loop autoplay muted>
-					<source src="/assets/vids/orbitante-1-alpha.webm" type="video/webm" />
-				</video>
-			</div>
-			<div id="orbitante-bottom-wrapper" class="w-auto h-auto">
-				<video width="680" height="100%" loop autoplay muted>
-					<source src="/assets/vids/orbitante-3-alpha.webm" type="video/webm" />
-				</video>
+			<div id="orb-left-wrapper" class="w-auto h-auto">
+				<ImageSequence
+					totalFrames={300}
+					name={'hero-orb-left'}
+					url={'/assets/vids/orbitante-3-seq/'}
+					imgWidth={200}
+					imgHeight={200}
+				/>
 			</div>
 		</div>
 	</Main>
@@ -53,25 +61,17 @@
 
 <style>
 	* {
-		overflow-x: hidden;
+		overflow: hidden;
 	}
 
-	#orbitante-left-wrapper {
+	#orb-right-wrapper {
 		position: absolute;
-		left: -100px;
-		top: 700px;
+		right: 140px;
+		top: 600px;
 	}
-
-	#orbitante-right-wrapper {
+	#orb-left-wrapper {
 		position: absolute;
-		left: 1200px;
-		top: 500px;
-	}
-
-	#orbitante-bottom-wrapper {
-		position: absolute;
-		left: 100px;
-		top: 1400px;
-		rotate: 90deg;
+		left: 120px;
+		top: 800px;
 	}
 </style>

@@ -4,6 +4,8 @@
 
 	//COMPONENTS
 	import SocialButton from '../../components/button/light/lg/social.svelte';
+	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
+	import Separator from '../../components/iteractive/separator.svelte';
 
 	//PROPS
 	export let data;
@@ -12,6 +14,17 @@
 <div class="relative w-auto h-auto bg-primary-main pt-32 pb-124 text-center">
 	<Main>
 		<div class="text-h5 text-primary-dark font-bold">
+			<div class="flex w-full justify-center">
+				<Separator
+					w={500}
+					h={16}
+					foreground={'#02232B'}
+					background={'#BDFF00'}
+					cols={90}
+					rows={20}
+					threshold={0.96}
+				/>
+			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
 		<div class="flex justify-center w-full h-auto">
@@ -31,42 +44,40 @@
 				/>
 			{/each}
 		</div>
-		<div id="orbitante-left-wrapper" class="w-auto h-auto">
-			<video width="560" height="100%" loop autoplay muted>
-				<source src="/assets/vids/orbitante-3-alpha.webm" type="video/webm" />
-			</video>
+		<div id="orb-left-wrapper" class="w-auto h-auto">
+			<ImageSequence
+				totalFrames={300}
+				name={'section-5-orb-bottom'}
+				url={'/assets/vids/orbitante-3-seq/'}
+				imgWidth={200}
+				imgHeight={200}
+			/>
 		</div>
-		<div id="orbitante-right-wrapper" class="w-auto h-auto">
-			<video width="720" height="100%" loop autoplay muted>
-				<source src="/assets/vids/orbitante-2-alpha.webm" type="video/webm" />
-			</video>
-		</div>
-		<div id="orbitante-bottom-wrapper" class="w-auto h-auto">
-			<video width="320" height="100%" loop autoplay muted>
-				<source src="/assets/vids/orbitante-1-alpha.webm" type="video/webm" />
-			</video>
+		<div id="orb-right-wrapper" class="w-auto h-auto">
+			<ImageSequence
+				totalFrames={300}
+				name={'section-5-orb-right'}
+				url={'/assets/vids/orbitante-2-seq/'}
+				imgWidth={320}
+				imgHeight={320}
+			/>
 		</div>
 	</Main>
 </div>
 
 <style>
-	#orbitante-left-wrapper {
+	#orb-left-wrapper {
 		position: absolute;
-		left: -100px;
-		top: 100px;
+		left: 100px;
+		top: 300px;
+		z-index: 4;
 	}
 
-	#orbitante-right-wrapper {
+	#orb-right-wrapper {
 		position: absolute;
-		right: -140px;
-		top: -220px;
-		rotate: 90deg;
-	}
-
-	#orbitante-bottom-wrapper {
-		position: absolute;
-		right: 240px;
-		top: 320px;
-		rotate: 90deg;
+		right: 100px;
+		top: -100px;
+		rotate: 0deg;
+		z-index: 4;
 	}
 </style>
