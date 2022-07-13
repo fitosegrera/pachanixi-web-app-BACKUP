@@ -29,6 +29,11 @@
 	//STYLES
 	import '../app.css';
 
+	//LIBS
+
+	import { navigating } from '$app/stores';
+	import { loading } from '../stores/main';
+
 	//COMPONENTS
 	import NavBar from '../components/navigation/navbar.svelte';
 	import Footer from '../components/navigation/footer.svelte';
@@ -36,6 +41,8 @@
 	//PROPS
 	export let navBarData;
 	export let footerData;
+
+	$: $loading = !!$navigating;
 </script>
 
 <svelte:head>
@@ -48,9 +55,15 @@
 </svelte:head>
 
 <div id="page-wrapper" class="h-auto w-auto">
-	<NavBar {navBarData} />
-	<slot />
-	<Footer {footerData} />
+	{#if $loading}
+		<div class="w-full h-240 bg-primary-main">
+			<h1 class="text-h2 text-primary-dark">Loading</h1>
+		</div>
+	{:else}
+		<NavBar {navBarData} />
+		<slot />
+		<Footer {footerData} />
+	{/if}
 </div>
 
 <style>

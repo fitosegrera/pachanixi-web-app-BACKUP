@@ -5,7 +5,6 @@
 
 	//PROPS
 	export let footerData;
-	console.log(footerData);
 </script>
 
 <div

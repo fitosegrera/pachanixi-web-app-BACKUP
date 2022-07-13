@@ -57,8 +57,6 @@
 		};
 
 		p5.mouseWheel = (event) => {
-			//console.log(event);
-			console.log(event.delta);
 			yPos += event.pageY;
 		};
 

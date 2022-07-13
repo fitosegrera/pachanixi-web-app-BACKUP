@@ -26,7 +26,7 @@
 >
 	<div class="flex items-center h-110 w-100 justify-start pl-32">
 		<div class="cursor-pointer">
-			<LogoButton type={navBarData.logo} />
+			<LogoButton type={navBarData.logo} url={'/'} />
 		</div>
 	</div>
 	<div class="flex items-center justify-center h-full w-auto space-x-48">

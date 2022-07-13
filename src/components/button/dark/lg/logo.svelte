@@ -4,6 +4,7 @@
 
 	//PROPS
 	export let type;
+	export let url;
 
 	let logoWidth = 600;
 	let logoHeight = 640;
@@ -135,4 +136,6 @@
 	};
 </script>
 
-<P5 {sketch} />
+<a href={url}>
+	<P5 {sketch} />
+</a>
