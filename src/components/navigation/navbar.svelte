@@ -3,7 +3,8 @@
 	import SideBar from './sidebar.svelte';
 	import SocialButton from '../button/dark/lg/social.svelte';
 	import HamburgerButton from '../button/dark/lg/hamburger.svelte';
-	import LogoButton from '../button/dark/lg/logo.svelte';
+	// import LogoButton from '../button/dark/lg/logo-generative.svelte';
+	import LogoButton from '../button/dark/lg/logo-static.svelte';
 
 	//PROPS
 	export let navBarData;
@@ -26,7 +27,8 @@
 >
 	<div class="flex items-center h-110 w-100 justify-start pl-32">
 		<div class="cursor-pointer">
-			<LogoButton type={navBarData.logo} url={'/'} />
+			<!-- <LogoButton type={navBarData.logo} url={'/'} /> -->
+			<LogoButton />
 		</div>
 	</div>
 	<div class="flex items-center justify-center h-full w-auto space-x-48">

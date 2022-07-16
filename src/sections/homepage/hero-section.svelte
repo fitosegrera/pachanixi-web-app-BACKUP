@@ -26,7 +26,7 @@
 				<h2>{data.primary.paragraph[0].text}</h2>
 			</div>
 			<div class="flex w-auto justify-center mt-88">
-				<PrimaryButton label={data.primary.button_label} url={''} />
+				<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} />
 			</div>
 			<div class="flex w-auto h-auto justify-center mt-64">
 				<ImageSequence

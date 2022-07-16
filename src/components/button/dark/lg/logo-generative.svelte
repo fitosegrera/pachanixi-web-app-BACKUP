@@ -137,5 +137,7 @@
 </script>
 
 <a href={url}>
-	<P5 {sketch} />
+	{#if type == 'generative'}
+		<P5 {sketch} />
+	{/if}
 </a>

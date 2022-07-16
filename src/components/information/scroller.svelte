@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="bg-blur w-screen flex items-center text-p2 font-bold text-primary-main h-72 py-16 bg-secondary-main"
+	class="bg-blur w-screen flex items-center justify-center text-p2 font-bold text-primary-main h-72 py-16 bg-secondary-main"
 >
 	<div id="scroll-container">
 		<div id="scroll-text">

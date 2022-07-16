@@ -30,7 +30,7 @@
 			<p>{data.primary.paragraph[0].text}</p>
 		</div>
 		<div class="flex w-auto justify-center mt-72">
-			<PrimaryButton label={data.primary.button_label} url={''} />
+			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} />
 		</div>
 	</Main>
 </div>

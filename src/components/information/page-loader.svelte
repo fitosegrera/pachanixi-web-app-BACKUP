@@ -2,6 +2,9 @@
 	//LIBS
 	import P5 from 'p5-svelte';
 
+	//COMPONENTS
+	import Logo from '../information/logo.svelte';
+
 	export let w, h;
 	export let cols, rows;
 	export let foreground, background;
@@ -36,15 +39,14 @@
 
 		p5.draw = () => {
 			p5.background(background);
+			randomMatrix();
+		};
 
-			if (yPos !== yPosPrev) {
-				randomMatrix();
-			}
-
+		const randomMatrix = () => {
 			for (let y = 0; y < rows; y++) {
 				for (let x = 0; x < cols; x++) {
 					let r = p5.random();
-					if (matrix[y][x] == 1) {
+					if (r > 0.95) {
 						p5.fill(foreground);
 					} else {
 						p5.fill(background);
@@ -52,27 +54,17 @@
 					p5.rect(cellSize * x, cellSize * y, cellSize, cellSize);
 				}
 			}
-
-			yPosPrev = yPos;
-		};
-
-		p5.mouseWheel = (event) => {
-			yPos += event.pageY;
-		};
-
-		const randomMatrix = () => {
-			for (let y = 0; y < rows; y++) {
-				for (let x = 0; x < cols; x++) {
-					let r = p5.random();
-					if (r > threshold) {
-						matrix[y][x] = 1;
-					} else {
-						matrix[y][x] = 0;
-					}
-				}
-			}
 		};
 	};
 </script>
 
-<!-- <P5 {sketch} /> -->
+<div class="w-full h-auto bg-primary-dark text-center my-240">
+	<div class="flex w-full h-auto items-center justify-center">
+		<Logo />
+	</div>
+	<div class="flex w-full h-auto items-center justify-center">
+		<P5 {sketch} />
+	</div>
+	<!-- <h1 class="text-h4 font-bold text-primary-main overflow-hidden">LOADING</h1> -->
+	<p class="text-p1 font-medium text-primary-main">Espere un momento...</p>
+</div>

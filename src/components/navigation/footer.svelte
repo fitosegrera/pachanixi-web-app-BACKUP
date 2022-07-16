@@ -1,7 +1,6 @@
 <script>
 	//COMPONENTS
 	import SocialButton from '../button/dark/lg/social.svelte';
-	import LogoButton from '../button/dark/lg/logo.svelte';
 
 	//PROPS
 	export let footerData;

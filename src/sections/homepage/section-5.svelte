@@ -67,8 +67,8 @@
 
 <style>
 	#orb-left-wrapper {
-		position: absolute;
 		left: 100px;
+		position: absolute;
 		top: 300px;
 		z-index: 4;
 	}
