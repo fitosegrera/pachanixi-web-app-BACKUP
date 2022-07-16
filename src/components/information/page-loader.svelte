@@ -58,13 +58,4 @@
 	};
 </script>
 
-<div class="w-full h-auto bg-primary-dark text-center my-240">
-	<div class="flex w-full h-auto items-center justify-center">
-		<Logo />
-	</div>
-	<div class="flex w-full h-auto items-center justify-center">
-		<P5 {sketch} />
-	</div>
-	<!-- <h1 class="text-h4 font-bold text-primary-main overflow-hidden">LOADING</h1> -->
-	<p class="text-p1 font-medium text-primary-main">Espere un momento...</p>
-</div>
+<P5 {sketch} />

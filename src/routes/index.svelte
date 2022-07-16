@@ -36,13 +36,29 @@
 	import Section4 from '../sections/homepage/section-4.svelte';
 	import Section5 from '../sections/homepage/section-5.svelte';
 
+	//COMPONENTS
+	import PageLoader from '../components/information/page-loader.svelte';
+
 	//PROPS
 	export let homepageData;
 </script>
 
 {#if $img_seq_loading < 18}
 	<div id="asset-loader" class="flex items-center justify-center bg-primary-dark w-full h-full">
-		<h1 class="text-p1 text-primary-light">{$img_seq_loading} loaded!</h1>
+		<div>
+			<h1 class="text-p2 font-medium text-primary-main text-center">
+				ASSETS LOADED: {$img_seq_loading}/18
+			</h1>
+			<PageLoader
+				w={460}
+				h={16}
+				foreground={'#BDFF00'}
+				background={'#02232B'}
+				cols={60}
+				rows={20}
+				threshold={0.96}
+			/>
+		</div>
 	</div>
 {/if}
 <HeroSection data={homepageData[0]} />
