@@ -43,11 +43,11 @@
 	export let homepageData;
 </script>
 
-{#if $img_seq_loading < 18}
+{#if $img_seq_loading < 9}
 	<div id="asset-loader" class="flex items-center justify-center bg-primary-dark w-full h-full">
 		<div>
 			<h1 class="text-p2 font-medium text-primary-main text-center">
-				ASSETS LOADED: {$img_seq_loading}/18
+				ASSETS LOADED: {$img_seq_loading}/9
 			</h1>
 			<PageLoader
 				w={460}
