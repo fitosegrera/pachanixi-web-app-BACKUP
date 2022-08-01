@@ -6,7 +6,7 @@
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
 	import NftCard from '../../components/card/dark/lg/nft.svelte';
 	import Scroller from '../../components/information/scroller.svelte';
-	import Separator from '../../components/iteractive/separator.svelte';
+	import Divider from '../../components/information/divider.svelte';
 
 	//PROPS
 	export let data;
@@ -16,15 +16,7 @@
 	<Main>
 		<div class="text-h5 text-primary-main font-bold">
 			<div class="flex w-auto justify-center pt-32">
-				<Separator
-					w={1480}
-					h={16}
-					foreground={'#BDFF00'}
-					background={'#02232B'}
-					cols={260}
-					rows={20}
-					threshold={0.96}
-				/>
+				<Divider name="section-3-divider" w={'960'} h={'32'} pixCol={'#BDFF00'} />
 			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
@@ -34,7 +26,7 @@
 			{/each}
 		</div>
 		<div class="flex w-auto justify-center mt-72">
-			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} />
+			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
 		</div>
 	</Main>
 	<div class="w-full h-auto mt-72">

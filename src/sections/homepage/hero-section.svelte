@@ -13,7 +13,7 @@
 <div class="w-auto h-auto bg-primary-dark">
 	<Main>
 		<div class="w-full h-auto">
-			<div class="pt-224">
+			<div class="mt-160">
 				<img
 					src={data.primary.background_image.url}
 					alt={data.primary.background_image.alt}
@@ -21,25 +21,29 @@
 				/>
 			</div>
 			<div
-				class="flex w-full pt-32 items-center justify-center text-primary-light font-bold text-lg"
+				class="flex w-full mt-32 items-center justify-center text-primary-light font-bold text-lg"
 			>
 				<h2>{data.primary.paragraph[0].text}</h2>
 			</div>
 			<div class="flex w-auto justify-center mt-88">
-				<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} />
+				<PrimaryButton
+					label={data.primary.button_label}
+					url={data.primary.button_url}
+					target={'__blank'}
+				/>
 			</div>
 			<div class="flex w-auto h-auto justify-center mt-64">
 				<ImageSequence
-					totalFrames={300}
+					totalFrames={240}
 					name={'hero-nft'}
 					url={'/assets/vids/nft-1-seq/'}
-					imgWidth={1330}
-					imgHeight={880}
+					imgWidth={940}
+					imgHeight={680}
 				/>
 			</div>
 			<div id="orb-right-wrapper" class="w-auto h-auto">
 				<ImageSequence
-					totalFrames={300}
+					totalFrames={240}
 					name={'hero-orb-right'}
 					url={'/assets/vids/orbitante-2-seq/'}
 					imgWidth={240}
@@ -48,7 +52,7 @@
 			</div>
 			<div id="orb-left-wrapper" class="w-auto h-auto">
 				<ImageSequence
-					totalFrames={300}
+					totalFrames={240}
 					name={'hero-orb-left'}
 					url={'/assets/vids/orbitante-3-seq/'}
 					imgWidth={200}

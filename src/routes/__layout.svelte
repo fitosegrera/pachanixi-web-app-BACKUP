@@ -37,13 +37,10 @@
 	//COMPONENTS
 	import NavBar from '../components/navigation/navbar.svelte';
 	import Footer from '../components/navigation/footer.svelte';
-	import PageLoader from '../components/information/page-loader.svelte';
 
 	//PROPS
 	export let navBarData;
 	export let footerData;
-
-	$: $loading = !!$navigating;
 </script>
 
 <svelte:head>
@@ -56,21 +53,9 @@
 </svelte:head>
 
 <div id="page-wrapper" class="h-auto w-auto">
-	{#if $loading}
-		<!-- <PageLoader
-			w={460}
-			h={16}
-			foreground={'#BDFF00'}
-			background={'#02232B'}
-			cols={60}
-			rows={20}
-			threshold={0.96}
-		/> -->
-	{:else}
-		<NavBar {navBarData} />
-		<slot />
-		<Footer {footerData} />
-	{/if}
+	<NavBar {navBarData} />
+	<slot />
+	<Footer {footerData} />
 </div>
 
 <style>

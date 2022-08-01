@@ -10,7 +10,7 @@
 
 	//PROPS
 	export let menu, social;
-	console.log(menu);
+	//console.log(menu);
 
 	const dispatch = createEventDispatcher();
 
@@ -24,7 +24,9 @@
 		<CloseButton icon={'ant-design:close-square-outlined'} />
 	</div>
 	{#each menu as item}
-		<MenuItem label={item.item} url={item.url.url} />
+		<div class="w-auto h-auto" on:click={handleClick}>
+			<MenuItem label={item.item} url={item.url} />
+		</div>
 	{/each}
 	<div class="flex items-center justify-center h-full w-auto space-x-48">
 		{#each social as item}

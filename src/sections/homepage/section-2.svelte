@@ -5,7 +5,7 @@
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/light/lg/primary.svelte';
 	import ImageSequence from '../../components/iteractive/image-sequence.svelte';
-	import Separator from '../../components/iteractive/separator.svelte';
+	import Divider from '../../components/information/divider.svelte';
 
 	//PROPS
 	export let data;
@@ -16,15 +16,7 @@
 		<div class="flex">
 			<div>
 				<div class="flex w-full justify-start">
-					<Separator
-						w={600}
-						h={16}
-						foreground={'#02232B'}
-						background={'#BDFF00'}
-						cols={120}
-						rows={20}
-						threshold={0.96}
-					/>
+					<Divider name="section-2-divider" w={'420'} h={'32'} pixCol={'#02232B'} />
 				</div>
 				<div class="flex space-x-32 text-h5 text-primary-dark font-bold items-center">
 					<h5>{data.primary.title[0].text}</h5>
@@ -37,11 +29,11 @@
 			</div>
 			<div id="nft-wrapper" class="w-auto h-auto">
 				<ImageSequence
-					totalFrames={300}
+					totalFrames={240}
 					name={'section-2-nft'}
 					url={'/assets/vids/nft-2-seq/'}
-					imgWidth={1330}
-					imgHeight={880}
+					imgWidth={1000}
+					imgHeight={723}
 				/>
 			</div>
 		</div>
@@ -49,11 +41,11 @@
 			<p class="">{data.primary.paragraph[0].text}</p>
 		</div>
 		<div class="flex w-auto justify-center mt-72">
-			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} />
+			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
 		</div>
 		<div id="orb-left-wrapper" class="w-auto h-auto">
 			<ImageSequence
-				totalFrames={300}
+				totalFrames={240}
 				name={'section-2-orb-left'}
 				url={'/assets/vids/orbitante-2-seq/'}
 				imgWidth={240}
@@ -62,7 +54,7 @@
 		</div>
 		<div id="orb-right-wrapper" class="w-auto h-auto">
 			<ImageSequence
-				totalFrames={300}
+				totalFrames={240}
 				name={'section-2-orb-right'}
 				url={'/assets/vids/orbitante-3-seq/'}
 				imgWidth={180}
@@ -75,8 +67,8 @@
 <style>
 	#nft-wrapper {
 		position: absolute;
-		right: -250px;
-		top: -250px;
+		right: -50px;
+		top: -180px;
 		pointer-events: none;
 		mix-blend-mode: normal;
 		z-index: 3;

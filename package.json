@@ -15,6 +15,7 @@
 		"@iconify/svelte": "^2.2.1",
 		"@playwright/test": "^1.22.2",
 		"@prismicio/client": "^6.6.1",
+		"@prismicio/helpers": "^2.3.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.7",

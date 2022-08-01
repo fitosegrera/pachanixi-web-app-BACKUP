@@ -4,6 +4,7 @@
 
 	//PROPS
 	export let icon, url, name, active;
+	// console.log(icon);
 </script>
 
 <div class="hover:text-primary-light cursor-pointer">

@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="grid grid-flow-col grid-cols-2 w-1920 max-w-full h-124 py-16 bg-primary-dark-alpha text-2xl text-primary-light backdrop-blur-md"
+	class="grid grid-flow-col grid-cols-2 w-1920 max-w-full h-auto py-16 bg-primary-dark-alpha text-h5 text-primary-light backdrop-blur-md"
 >
 	<div class="flex space-x-48 h-110 w-full justify-start pl-32">
 		<div class="flex items-center w-full h-full">

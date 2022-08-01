@@ -23,7 +23,7 @@
 
 <div
 	id="navbar-wrapper"
-	class="fixed grid grid-flow-col grid-cols-3 w-1920 max-w-full h-160 py-16 bg-primary-dark-alpha text-2xl text-primary-light backdrop-blur-md"
+	class="fixed grid grid-flow-col grid-cols-3 w-1920 max-w-full h-auto py-16 bg-primary-dark-alpha text-h5 text-primary-light backdrop-blur-md"
 >
 	<div class="flex items-center h-110 w-100 justify-start pl-32">
 		<div class="cursor-pointer">
@@ -48,6 +48,6 @@
 
 <style>
 	#navbar-wrapper {
-		z-index: 5;
+		z-index: 15;
 	}
 </style>

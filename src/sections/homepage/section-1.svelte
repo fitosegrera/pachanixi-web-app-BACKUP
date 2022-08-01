@@ -4,8 +4,7 @@
 
 	//COMPONENTS
 	import PrimaryButton from '../../components/button/dark/lg/primary.svelte';
-	import Separator from '../../components/iteractive/separator.svelte';
-
+	import Divider from '../../components/information/divider.svelte';
 	//PROPS
 	export let data;
 </script>
@@ -14,15 +13,7 @@
 	<Main>
 		<div class="text-h5 text-primary-main font-bold">
 			<div class="flex w-auto justify-center">
-				<Separator
-					w={800}
-					h={16}
-					foreground={'#BDFF00'}
-					background={'#02232B'}
-					cols={160}
-					rows={20}
-					threshold={0.96}
-				/>
+				<Divider name="section-1-divider" w={'420'} h={'32'} pixCol={'#BDFF00'} />
 			</div>
 			<h5>{data.primary.title[0].text}</h5>
 		</div>
@@ -30,7 +21,7 @@
 			<p>{data.primary.paragraph[0].text}</p>
 		</div>
 		<div class="flex w-auto justify-center mt-72">
-			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} />
+			<PrimaryButton label={data.primary.button_label} url={data.primary.button_url} target={''} />
 		</div>
 	</Main>
 </div>

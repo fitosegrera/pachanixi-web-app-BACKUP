@@ -35,6 +35,7 @@
 	import Section3 from '../sections/homepage/section-3.svelte';
 	import Section4 from '../sections/homepage/section-4.svelte';
 	import Section5 from '../sections/homepage/section-5.svelte';
+	import Section6 from '../sections/homepage/section-6.svelte';
 
 	//COMPONENTS
 	import PageLoader from '../components/information/page-loader.svelte';
@@ -67,6 +68,7 @@
 <Section3 data={homepageData[3]} />
 <Section4 data={homepageData[4]} />
 <Section5 data={homepageData[5]} />
+<Section6 data={homepageData[6]} />
 
 <style>
 	#asset-loader {
